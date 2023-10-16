@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Instrukcije</name>
+    </assembly>
+    <members>
+        <member name="M:Instrukcije.Controllers.GrupaController.Get">
+            <response code="200">Sve je u redu</response>
+            <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.GrupaController.Post(Instrukcije.Models.Grupa)">
+            <response code="200">Sve je u redu</response>
+            <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.GrupaController.Delete(System.Int32)">
+            <response code="200">Sve je u redu</response>
+            <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+            <response code="415">Nismo poslali JSON</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.PolaznikController.Get">
+            <response code="200">Sve je u redu</response>
+            <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.PolaznikController.Post(Instrukcije.Models.DTO.PolaznikDTO)">
+            <response code="200">Sve je u redu</response>
+            <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.PolaznikController.Put(System.Int32,Instrukcije.Models.DTO.PolaznikDTO)">
+            <response code="200">Sve je u redu</response>
+            <response code="204">Nema u bazi polaznika kojeg želimo promijeniti</response>
+            <response code="415">Nismo poslali JSON</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:Instrukcije.Controllers.PolaznikController.Delete(System.Int32)">
+            <response code="200">Sve je u redu</response>
+            <response code="204">Nema u bazi polaznika kojeg želimo obrisati</response>
+            <response code="415">Nismo poslali JSON</response> 
+            <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+    </members>
+</doc>
