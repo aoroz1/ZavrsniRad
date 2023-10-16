@@ -1,0 +1,93 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\asset-manifest.json",
+      "PackagePath": "staticwebassets\\asset-manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\logo192.png",
+      "PackagePath": "staticwebassets\\logo192.png"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\logo512.png",
+      "PackagePath": "staticwebassets\\logo512.png"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\robots.txt",
+      "PackagePath": "staticwebassets\\robots.txt"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\service-worker.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\service-worker.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\service-worker.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\service-worker.js.map",
+      "PackagePath": "staticwebassets\\service-worker.js.map"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\css\\main.073c9b0a.css",
+      "PackagePath": "staticwebassets\\static\\css\\main.073c9b0a.css"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\css\\main.073c9b0a.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\main.073c9b0a.css.map"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\js\\787.eff7d39c.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\787.eff7d39c.chunk.js"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\js\\787.eff7d39c.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\787.eff7d39c.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\js\\main.f8921ace.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.f8921ace.js"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\js\\main.f8921ace.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.f8921ace.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\js\\main.f8921ace.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.f8921ace.js.map"
+    },
+    {
+      "Id": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot\\static\\media\\logo.103b5fa18196d5665a7e12318285c916.svg",
+      "PackagePath": "staticwebassets\\static\\media\\logo.103b5fa18196d5665a7e12318285c916.svg"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Instrukcije.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.Instrukcije.props",
+      "PackagePath": "build\\Instrukcije.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Instrukcije.props",
+      "PackagePath": "buildMultiTargeting\\Instrukcije.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.Instrukcije.props",
+      "PackagePath": "buildTransitive\\Instrukcije.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
