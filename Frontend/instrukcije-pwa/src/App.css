@@ -3,15 +3,9 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  max-width: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +22,19 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gumb{
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.broj{
+  text-align: right;
+}
+
+.sredina{
+  text-align: center;
+}
+
+.email{
+  font-size: 2em;
 }

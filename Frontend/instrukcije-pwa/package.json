@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rmdir ..\\..\\CSHARP\\Instrukcije\\Instrukcije\\wwwroot /s /q && move /y build ../../CSHARP/Instrukcije/Instrukcije/wwwroot",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
