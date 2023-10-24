@@ -35,13 +35,25 @@ alter table clan add foreign key (polaznik) references polaznik(sifra);
 insert into grupa (naziv,datumpocetka)
 values ('M1','2023-04-26 19:00:00');
 
-
-
 insert into grupa (naziv,datumpocetka)
 values ('C3','2023-12-30 17:00:00');
 
+insert into grupa (naziv,datumpocetka)
+values ('A4M3','2024-11-29 12:00:00');
+
+insert into grupa (naziv,datumpocetka)
+values ('A1','2024-12-01 14:00:00');
+
+
 insert into predmet (grupa,naziv,cijena,trajanje)
 values (1,'Matematika',null,150);
+
+insert into predmet (grupa,naziv,cijena,trajanje)
+values (2,'Hrvatski_jezik',149.99,200);
+
+insert into predmet (grupa,naziv,cijena,trajanje)
+values (4,'Informatika',100,75);
+
 
 
 insert into polaznik(ime,prezime,oib,email)
@@ -82,6 +94,14 @@ values (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),
 
 
 select * from grupa;
+select * from predmet;
+SELECT * FROM predmet
+ORDER BY cijena;
+
 
 ALTER TABLE grupa
 ALTER COLUMN datumpocetka datetime;
+
+DELETE FROM grupa where sifra=3;
+DELETE FROM predmet where sifra=3;
+
