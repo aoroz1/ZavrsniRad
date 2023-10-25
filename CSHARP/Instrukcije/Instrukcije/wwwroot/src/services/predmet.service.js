@@ -18,7 +18,7 @@ class PredmetDataService {
 
 
   async post(predmet){
-    //console.log(grupa);
+    //console.log(predmet);
     const odgovor = await http.post('/predmet',predmet)
        .then(response => {
          return {ok:true, poruka: 'Unio predmet'}; // return u odgovor
@@ -77,6 +77,5 @@ class PredmetDataService {
          }
 
 }
-const service=new PredmetDataService();
+export default new PredmetDataService();
 
-export default service;

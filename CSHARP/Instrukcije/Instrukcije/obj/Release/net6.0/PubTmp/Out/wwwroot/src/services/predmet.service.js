@@ -77,6 +77,5 @@ class PredmetDataService {
          }
 
 }
-const service=new PredmetDataService();
+export default new PredmetDataService();
 
-export default service;

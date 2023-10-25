@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RT4ldkVfxnHLa85DP0kOW8dD8oayAeL/FDLSXNcKPkc=",
+  "Hash": "UZNcXwAMDXDvM3Yfo19wBIBZtkRgw43dhZiIJE/P0BY=",
   "Source": "Instrukcije",
   "BasePath": "_content/Instrukcije",
   "Mode": "Default",
@@ -289,12 +289,12 @@
       "OriginalItemSpec": "wwwroot\\build\\static\\js\\787.eff7d39c.chunk.js.map"
     },
     {
-      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.bd9225b1.js",
+      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.14c799ec.js",
       "SourceId": "Instrukcije",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\",
       "BasePath": "_content/Instrukcije",
-      "RelativePath": "build/static/js/main.bd9225b1.js",
+      "RelativePath": "build/static/js/main.14c799ec.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,15 +303,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.bd9225b1.js"
+      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.14c799ec.js"
     },
     {
-      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.bd9225b1.js.LICENSE.txt",
+      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.14c799ec.js.LICENSE.txt",
       "SourceId": "Instrukcije",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\",
       "BasePath": "_content/Instrukcije",
-      "RelativePath": "build/static/js/main.bd9225b1.js.LICENSE.txt",
+      "RelativePath": "build/static/js/main.14c799ec.js.LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -320,15 +320,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.bd9225b1.js.LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.14c799ec.js.LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.bd9225b1.js.map",
+      "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\js\\main.14c799ec.js.map",
       "SourceId": "Instrukcije",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\",
       "BasePath": "_content/Instrukcije",
-      "RelativePath": "build/static/js/main.bd9225b1.js.map",
+      "RelativePath": "build/static/js/main.14c799ec.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,7 +337,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.bd9225b1.js.map"
+      "OriginalItemSpec": "wwwroot\\build\\static\\js\\main.14c799ec.js.map"
     },
     {
       "Identity": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\wwwroot\\build\\static\\media\\logo3.3364ae147410b4353073e0e312efbfc5.svg",
