@@ -39,20 +39,16 @@ insert into grupa (naziv,datumpocetka)
 values ('C3','2023-12-30 17:00:00');
 
 insert into grupa (naziv,datumpocetka)
-values ('A4M3','2024-11-29 12:00:00');
-
-insert into grupa (naziv,datumpocetka)
-values ('A1','2024-12-01 14:00:00');
+values ('A1','2023-11-26 10:00:00');
 
 
 insert into predmet (grupa,naziv,cijena,trajanje)
 values (1,'Matematika',null,150);
 
-insert into predmet (grupa,naziv,cijena,trajanje)
-values (2,'Hrvatski_jezik',149.99,200);
+
 
 insert into predmet (grupa,naziv,cijena,trajanje)
-values (4,'Informatika',100,75);
+values (5,'Informatika',100,75);
 
 
 
@@ -92,16 +88,31 @@ values (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),
 (1,15),(1,16),(1,17),(1,18),(1,19),(1,20),
 (1,21),(1,22),(1,23),(1,24),(1,25);
 
-
-select * from grupa;
-select * from predmet;
-SELECT * FROM predmet
-ORDER BY cijena;
-
-
 ALTER TABLE grupa
 ALTER COLUMN datumpocetka datetime;
 
-DELETE FROM grupa where sifra=3;
+AlTER TABLE predmet
+ALTER COLUMN grupa int null;
+
+select * from grupa;
+
+select * from predmet;
+
+SELECT * FROM predmet
+ORDER BY cijena;
+
+SELECT * FROM polaznik
+ORDER BY ime ASC;
+
+SELECT * FROM polaznik
+ORDER BY sifra ASC;
+
+
+SELECT  email from polaznik where email like 'alen%';
+DELETE FROM polaznik where sifra=29;
+
 DELETE FROM predmet where sifra=3;
+DELETE FROM predmet where sifra=4;
+DELETE FROM predmet where sifra=5;
+
 
