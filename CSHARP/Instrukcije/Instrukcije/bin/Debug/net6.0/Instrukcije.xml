@@ -9,7 +9,7 @@
             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
             <response code="503">Na azure treba dodati IP u firewall</response> 
         </member>
-        <member name="M:Instrukcije.Controllers.GrupaController.Post(Instrukcije.Models.Grupa)">
+        <member name="M:Instrukcije.Controllers.GrupaController.Post(Instrukcije.Models.DTO.GrupaDTO)">
             <response code="200">Sve je u redu</response>
             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
             <response code="503">Na azure treba dodati IP u firewall</response> 

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OLxbUI472pOCCCBxcTNQq/gEoKJtRN05UwP9sI49l5izKLPsGCTJLE6okb4uuBR+iRjctLFWuPpB6POpBI++ig==",
+  "dgSpecHash": "4FXc/bKfTyX15qwbgct9PM2gdGs84+s1FpWJE8CH+25qG+4z67hRr/xxnfCNdgB4MY/urwD8zu696DIaiCn35Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alen\\Documents\\GitHub\\ZavrsniRad\\CSHARP\\Instrukcije\\Instrukcije\\Instrukcije.csproj",
+  "projectFilePath": "C:\\Users\\alen\\source\\repos\\Instrukcije\\Instrukcije\\Instrukcije.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alen\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\alen\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\alen\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\alen\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\alen\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\alen\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

@@ -16,14 +16,15 @@ namespace Instrukcije.Data
         public DbSet<Polaznik> Polaznik { get; set; }
 
         public DbSet<Predmet> Predmet { get; set; }
+        
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
-            // implementacija veze 1:n
+             //implementacija veze 1:n
             modelBuilder.Entity<Predmet>().HasOne(g => g.Grupa);
 
-            // implementacjia veze n:n
+             //implementacjia veze n:n
             modelBuilder.Entity<Predmet>()
                 .HasMany(g => g.Polaznici)
                 .WithMany(p => p.Predmeti)

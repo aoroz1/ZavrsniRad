@@ -1,6 +1,8 @@
 ﻿
 using Instrukcije.Data;
 using Instrukcije.Models;
+using Instrukcije.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
@@ -9,6 +11,7 @@ namespace Instrukcije.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
+    
     public class GrupaController : ControllerBase
     {
 
@@ -52,12 +55,41 @@ namespace Instrukcije.Controllers
         }
 
 
+        [HttpGet]
+        [Route("{sifra:int}")]
+        public IActionResult GetBySifra(int sifra)
+        {
+
+            if (sifra <= 0)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var s = _context.Grupa.Find(sifra);
+
+                if (s == null)
+                {
+                    return StatusCode(StatusCodes.Status204NoContent, s);
+                }
+
+                return new JsonResult(s);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+            }
+
+        }
+
 
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPost]
-        public IActionResult Post(Grupa grupa)
+        public IActionResult Post(GrupaDTO dto)
         {
             if (!ModelState.IsValid)
             {
@@ -66,9 +98,17 @@ namespace Instrukcije.Controllers
 
             try
             {
-                _context.Grupa.Add(grupa);
+                Grupa g = new Grupa()
+                {
+                    Naziv = dto.Naziv,
+                    DatumPocetka = dto.DatumPocetka,
+                    
+                };
+                dto.Sifra = g.Sifra;
+                _context.Grupa.Add(g);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, grupa);
+                return Ok(dto);
+
             }
             catch (Exception ex)
             {

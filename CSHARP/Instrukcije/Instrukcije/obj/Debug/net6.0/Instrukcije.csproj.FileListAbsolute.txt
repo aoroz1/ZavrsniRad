@@ -79,3 +79,5 @@ C:\Users\alen\source\repos\Instrukcije\Instrukcije\obj\Debug\net6.0\Instrukcije.
 C:\Users\alen\source\repos\Instrukcije\Instrukcije\obj\Debug\net6.0\ref\Instrukcije.dll
 C:\Users\alen\source\repos\Instrukcije\Instrukcije\bin\Debug\net6.0\Instrukcije.xml
 C:\Users\alen\source\repos\Instrukcije\Instrukcije\obj\Debug\net6.0\Instrukcije.xml
+C:\Users\alen\source\repos\Instrukcije\Instrukcije\bin\Debug\net6.0\Instrukcije.staticwebassets.runtime.json
+C:\Users\alen\source\repos\Instrukcije\Instrukcije\bin\Debug\net6.0\BCrypt.Net-Next.dll

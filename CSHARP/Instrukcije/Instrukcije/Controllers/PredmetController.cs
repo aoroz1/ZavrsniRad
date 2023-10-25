@@ -1,15 +1,19 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Net.Mail;
+using System.Net;
+using System.Text.RegularExpressions;
 using Instrukcije.Data;
 using Instrukcije.Models;
 using Instrukcije.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Instrukcije.Controllers
 {
 
     [ApiController]
     [Route("api/v1/[controller]")]
+
     public class PredmetController : ControllerBase
     {
         private readonly InstrukcijeContext _context;
@@ -53,7 +57,7 @@ namespace Instrukcije.Controllers
                         Sifra = g.Sifra,
                         Naziv = g.Naziv,
                         Grupa = g.Grupa?.Naziv,
-                        SifraGrupa = g.Grupa.Sifra,
+                        SifraGrupa = g.Grupa?.Sifra,
                         Cijena=g.Cijena,
                         Trajanje=g.Trajanje,
                         BrojPolaznika = g.Polaznici.Count
@@ -71,7 +75,45 @@ namespace Instrukcije.Controllers
 
         }
 
+        
+        [HttpGet]
+        [Route("{sifra:int}")]
+        public IActionResult GetById(int sifra)
+        {
+             //ovdje će ići dohvaćanje u bazi
 
+
+            if (sifra == 0)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var e = _context.Predmet.Include(i => i.Grupa)
+              .FirstOrDefault(x => x.Sifra == sifra);
+
+            if (e == null)
+            {
+                return StatusCode(StatusCodes.Status204NoContent, e); //204
+            }
+
+            try
+            {
+                return new JsonResult(new PredmetDTO()
+                {
+                    Sifra = e.Sifra,
+                    Naziv = e.Naziv,
+                    SifraGrupa = e.Grupa == null ? 0 : e.Grupa.Sifra,
+                    Grupa = e.Grupa?.Naziv
+                }); //200
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message); //204
+            }
+        }
+
+        
         [HttpPost]
         public IActionResult Post(PredmetDTO predmetDTO)
         {
@@ -122,6 +164,8 @@ namespace Instrukcije.Controllers
 
         }
 
+
+     
 
         [HttpPut]
         [Route("{sifra:int}")]
@@ -317,7 +361,7 @@ namespace Instrukcije.Controllers
         }
 
         [HttpDelete]
-        [Route("{sifra:int}/dodaj/{polaznikSifra:int}")]
+        [Route("{sifra:int}/obrisi/{polaznikSifra:int}")]
         public IActionResult ObrisiPolaznika(int sifra, int polaznikSifra)
         {
 

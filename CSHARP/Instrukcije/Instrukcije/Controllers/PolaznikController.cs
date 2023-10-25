@@ -2,13 +2,16 @@
 using Instrukcije.Data;
 using Instrukcije.Models;
 using Instrukcije.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Instrukcije.Controllers
 {
 
     [ApiController]
     [Route("api/v1/[controller]")]
+  
     public class PolaznikController : ControllerBase
     {
 
@@ -30,36 +33,104 @@ namespace Instrukcije.Controllers
                 return BadRequest(ModelState);
             }
 
-            var polaznici = _context.Polaznik.ToList();
-            if (polaznici == null || polaznici.Count == 0)
+            try
             {
-                return new EmptyResult();
-            }
-
-            List<PolaznikDTO> vrati = new();
-
-            polaznici.ForEach(p =>
-            {
-                // ovo je ručno presipavanje, kasnije upogonimo automapper
-                var pdto = new PolaznikDTO()
+                var polaznici = _context.Polaznik.ToList();
+                if (polaznici == null || polaznici.Count == 0)
                 {
-                    Sifra = p.Sifra,
-                    Ime = p.Ime,
-                    Prezime = p.Prezime,
-                    Oib = p.Oib,
-                    Email = p.Email
-                };
+                    return new EmptyResult();
+                }
 
-                vrati.Add(pdto);
+                List<PolaznikDTO> vrati = new();
 
-
-            });
+                var ds = Path.DirectorySeparatorChar;
+                string dir = Path.Combine(Directory.GetCurrentDirectory()
+                    + ds + "wwwroot" + ds + "slike" + ds + "polaznici" + ds);
 
 
-            return Ok(vrati);
+                polaznici.ForEach(s => {
+                    var sdto = new PolaznikDTO();
+                    // dodati u nuget automapper ili neki drugi i skužiti kako se s njim radi, sada ručno
+                    var putanja = "/slike/prazno.png";
+                    if (System.IO.File.Exists(dir + s.Sifra + ".png"))
+                    {
+                        putanja = "/slike/polaznici/" + s.Sifra + ".png";
+                    }
 
+                    vrati.Add(new PolaznikDTO
+                    {
+                        Sifra = s.Sifra,
+                        Ime = s.Ime,
+                        Prezime = s.Prezime,
+                        Oib = s.Oib,
+                        Email = s.Email,
+                        Slika = putanja
+                    });
+                });
+
+
+                return new JsonResult(vrati); //200
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, e.Message); //204
+            }
         }
 
+
+        [HttpGet]
+        [Route("{sifra:int}")]
+        public IActionResult GetById(int sifra)
+        {
+            // ovdje će ići dohvaćanje u bazi
+
+
+            if (sifra == 0)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var s = _context.Polaznik.Find(sifra);
+
+            if (s == null)
+            {
+                return StatusCode(StatusCodes.Status204NoContent, s); //204
+            }
+
+            try
+            {
+
+                var ds = Path.DirectorySeparatorChar;
+                string dir = Path.Combine(Directory.GetCurrentDirectory()
+                    + ds + "wwwroot" + ds + "slike" + ds + "polaznici" + ds);
+
+                var putanja = "/slike/prazno.png";
+
+
+                if (System.IO.File.Exists(dir + s.Sifra + ".png"))
+                {
+                    putanja = "/slike/polaznici/" + s.Sifra + ".png";
+                }
+
+                var DTO = new PolaznikDTO()
+                {
+                    Sifra = s.Sifra,
+                    Ime = s.Ime,
+                    Prezime = s.Prezime,
+                    Oib = s.Oib,
+                    Email = s.Email,
+                    Slika = putanja
+                };
+
+                return new JsonResult(DTO); //200
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, e.Message); //204
+            }
+        }
 
 
 
@@ -146,6 +217,54 @@ namespace Instrukcije.Controllers
         }
 
 
+        [HttpGet]
+        [Route("trazi/{uvjet}")]
+        public IActionResult TraziPolaznik(string uvjet)
+        {
+            // ovdje će ići dohvaćanje u bazi
+
+            if (uvjet == null || uvjet.Length < 3)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var polaznici = _context.Polaznik
+                    .Include(p => p.Predmeti)
+                    .Where(p => p.Ime.Contains(uvjet) || p.Prezime.Contains(uvjet))
+
+                    // .FromSqlRaw($"SELECT a.* FROM polaznik a left join clan b on a.sifra=b.polaznik where concat(ime,' ',prezime,' ',ime) like '%@uvjet%'",
+                    //             new SqlParameter("uvjet", uvjet), new SqlParameter("grupa", grupa))
+                    .ToList();
+                // (b.grupa is null or b.grupa!=@grupa)  and 
+                List<PolaznikDTO> vrati = new();
+
+                polaznici.ForEach(s => {
+                    var sdto = new PolaznikDTO();
+                    // dodati u nuget automapper ili neki drugi i skužiti kako se s njim radi, sada ručno
+                    vrati.Add(new PolaznikDTO
+                    {
+                        Sifra = s.Sifra,
+                        Ime = s.Ime,
+                        Prezime = s.Prezime,
+                        Oib = s.Oib,
+                        Email = s.Email
+                    });
+                });
+
+
+                return new JsonResult(vrati); //200
+
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, e.Message); //204
+            }
+        }
+
+
+
         /// <response code="200">Sve je u redu</response>
         /// <response code="204">Nema u bazi polaznika kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
@@ -185,6 +304,58 @@ namespace Instrukcije.Controllers
 
 
 
+        [HttpPut]
+        [Route("postaviSliku/{sifra:int}")]
+        public IActionResult PostaviSliku(int sifra, SlikaDTO slikaDTO)
+        {
+            if (sifra == 0)
+            {
+                return BadRequest(); //400
+            }
+
+            if (slikaDTO == null || slikaDTO?.Base64?.Length == 0)
+            {
+                return BadRequest(); //400
+            }
+
+            var p = _context.Polaznik.Find(sifra);
+            if (p == null)
+            {
+                return BadRequest(); //400
+            }
+
+
+
+            try
+            {
+                var ds = Path.DirectorySeparatorChar;
+
+
+
+
+                string dir = Path.Combine(Directory.GetCurrentDirectory()
+                    + ds + "wwwroot" + ds + "slike" + ds + "polaznici");
+
+
+                if (!System.IO.Directory.Exists(dir))
+                {
+                    System.IO.Directory.CreateDirectory(dir);
+                }
+
+
+                var putanja = Path.Combine(dir + ds + sifra + ".png");
+
+
+
+                System.IO.File.WriteAllBytes(putanja, Convert.FromBase64String(slikaDTO?.Base64));
+
+                return new JsonResult("{\"poruka\": \"Uspješno pohranjena slika\"}");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, e.Message); //204
+            }
+        }
 
 
 
@@ -192,3 +363,5 @@ namespace Instrukcije.Controllers
 
     }
 }
+
+
